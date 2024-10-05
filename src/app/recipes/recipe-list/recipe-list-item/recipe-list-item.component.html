@@ -1,0 +1,8 @@
+<mat-card [routerLink]="recipe().id" routerLinkActive="active" class="example-card" appearance="outlined">
+  <mat-card-header>
+    <mat-card-title-group>
+      <mat-card-title>{{recipe().name}}</mat-card-title>
+      <img mat-card-sm-image [src]="recipe().imagePath">
+    </mat-card-title-group>
+  </mat-card-header>
+</mat-card>

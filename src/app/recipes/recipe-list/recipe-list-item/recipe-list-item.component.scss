@@ -1,0 +1,22 @@
+.mat-mdc-card {
+  &.active {
+    background-color: #005cbb26;
+
+    &:hover {
+      background-color: #005cbb40;
+    }
+  }
+  &:hover {
+    cursor: pointer;
+    background-color: #efedf0;
+  }
+}
+
+.mat-mdc-card-header {
+  padding: 8px;
+
+  img {
+    border: 1px solid #c4c6d0;
+    border-radius: 12px;
+  }
+}
