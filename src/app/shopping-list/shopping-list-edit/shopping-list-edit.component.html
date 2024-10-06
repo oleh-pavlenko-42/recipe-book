@@ -1,18 +1,18 @@
-<form class="ingredient-form">
+<form #form="ngForm" (ngSubmit)="onSubmit(form)" class="ingredient-form">
   <div class="form-group">
     <mat-form-field class="example-full-width">
       <mat-label>Ingredient</mat-label>
-      <input matInput type="text" placeholder="Ex. Pizza" [value]="ingredient()?.name">
+      <input matInput type="text" placeholder="Ex. Pizza" name="name" [value]="ingredient()?.name" ngModel required>
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
       <mat-label>Amount</mat-label>
-      <input matInput type="number" [value]="ingredient()?.amount">
+      <input matInput type="number" name="amount" [value]="ingredient()?.amount" ngModel required>
     </mat-form-field>
   </div>
   <div class="form-group">
-    <button mat-flat-button>Add Ingredients</button>
-    <button mat-flat-button class="btn-danger">Delete</button>
-    <button mat-button>Clear</button>
+    <button mat-flat-button type="submit">Add Ingredients</button>
+    <button mat-flat-button class="btn-danger" type="button">Delete</button>
+    <button mat-button type="button" (click)="onClear(form)">Clear</button>
   </div>
 </form>
