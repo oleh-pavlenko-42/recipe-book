@@ -1,0 +1,19 @@
+.shopping-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  .mat-mdc-card {
+    &.active {
+      background-color: #005cbb26;
+
+      &:hover {
+        background-color: #005cbb40;
+      }
+    }
+    &:hover {
+      cursor: pointer;
+      background-color: #efedf0;
+    }
+  }
+}

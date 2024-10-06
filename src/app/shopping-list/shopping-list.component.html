@@ -1,0 +1,8 @@
+<router-outlet></router-outlet>
+<div class="shopping-list">
+  @for (ingredient of ingredients; track ingredient.id) {
+  <mat-card [routerLink]="[ingredient.id, 'edit']" routerLinkActive="active" appearance="outlined">
+    <mat-card-content>{{ingredient.name}} ({{ingredient.amount}})</mat-card-content>
+  </mat-card>
+  }
+</div>
