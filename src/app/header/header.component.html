@@ -1,8 +1,8 @@
 <header>
   <nav>
     <a mat-button>Recipe Book</a>
-    <a mat-button>Recipes</a>
-    <a mat-button>Shopping List</a>
+    <a mat-button routerLink="/recipes">Recipes</a>
+    <a mat-button routerLink="/shopping-list">Shopping List</a>
     <div class="flex-spacer"></div>
     <button mat-button [matMenuTriggerFor]="menu" class="icon-btn">Menu <mat-icon>arrow_drop_down</mat-icon></button>
     <mat-menu #menu="matMenu">
