@@ -1,4 +1,4 @@
-import { Component, computed, inject, input } from '@angular/core';
+import { Component, effect, inject, input } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -17,14 +17,23 @@ export class ShoppingListEditComponent {
   private shoppingListService = inject(ShoppingListService);
 
   ingredientId = input<string>();
+  name: string = '';
+  amount: number | null = null;
 
-  ingredient = computed(() => {
-    if (this.ingredientId()) {
-      const ingredientId = this.ingredientId();
-      return this.shoppingListService.getIngredient(ingredientId as string);
-    }
-    return null;
-  });
+  constructor() {
+    effect(() => {
+      if (this.ingredientId()) {
+        const ingredientId = this.ingredientId();
+        const ingredient = this.shoppingListService.getIngredient(
+          ingredientId as string
+        );
+        if (ingredient) {
+          this.name = ingredient.name;
+          this.amount = ingredient.amount;
+        }
+      }
+    });
+  }
 
   onSubmit(form: NgForm) {
     if (form.valid) {

@@ -2,12 +2,12 @@
   <div class="form-group">
     <mat-form-field class="example-full-width">
       <mat-label>Ingredient</mat-label>
-      <input matInput type="text" placeholder="Ex. Pizza" name="name" [value]="ingredient()?.name" ngModel required>
+      <input matInput type="text" placeholder="Ex. Pizza" name="name" [(ngModel)]="name" required>
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
       <mat-label>Amount</mat-label>
-      <input matInput type="number" name="amount" [value]="ingredient()?.amount" ngModel required>
+      <input matInput type="number" name="amount" [(ngModel)]="amount" required>
     </mat-form-field>
   </div>
   <div class="form-group">
