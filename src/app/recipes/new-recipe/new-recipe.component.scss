@@ -1,0 +1,27 @@
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  .add-ingredient-btn {
+    position: relative;
+    top: -75px;
+    left: calc(100% - 48px);
+  }
+
+  .ingredients-list {
+    position: relative;
+    top: -48px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .ingredient-item {
+    background-color: #e0e0ff;
+    color: #000;
+    border-radius: 10%;
+    padding: 8px;
+  }
+}

@@ -1,3 +1,4 @@
+<button mat-flat-button [routerLink]="'new'">New Recipe</button>
 @for (recipe of recipes; track recipe.id) {
 <app-recipe-list-item [recipe]="recipe" />
 }

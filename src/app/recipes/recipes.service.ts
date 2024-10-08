@@ -25,4 +25,9 @@ export class RecipesService {
   getRecipe(id: string) {
     return this.recipes.find((recipe) => recipe.id === id);
   }
+
+  addRecipe(recipe: Recipe) {
+    this.recipes.push(recipe);
+    console.log(this.recipes);
+  }
 }

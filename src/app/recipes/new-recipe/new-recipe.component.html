@@ -1,0 +1,30 @@
+<form #form="ngForm" class="example-form">
+  <mat-form-field class="example-full-width">
+    <mat-label>Recipe name</mat-label>
+    <input matInput placeholder="Ex. Pizza" name="name" ngModel required>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Description</mat-label>
+    <textarea matInput name="description" ngModel required></textarea>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Ingredients</mat-label>
+    <input matInput name="ingredients" #ingredients ngModel (keydown.enter)="addIngredient(ingredients)">
+  </mat-form-field>
+  <button mat-mini-fab type="button" class="add-ingredient-btn" (click)="addIngredient(ingredients)">
+    <mat-icon>add</mat-icon>
+  </button>
+  <div class="ingredients-list">
+    @for (ingredient of ingredientsArray; track ingredient.name) {
+    <span class="ingredient-item">{{ingredient.name}}</span>
+    }
+  </div>
+  <input type="file">
+
+  <div class="form-group">
+    <button mat-flat-button type="button" (click)="onSubmit(form)">Add Recipe</button>
+    <button mat-button type="button" (click)="onClear(form)">Clear</button>
+  </div>
+</form>
